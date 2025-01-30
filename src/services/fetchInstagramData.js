@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const fetchInstagramData = async () => {
+const fetchInstagramData = async (accessToken) => {
     try {
-        const response = await axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=YOUR_ACCESS_TOKEN');
+        const response = await axios.get(`https://graph.instagram.com/me/media?fields=id,caption,media_url&access_token=${accessToken}`);
         return response.data.data;
     } catch (error) {
         console.error('Error fetching data from Instagram API', error);

@@ -5,15 +5,16 @@ import Post from './components/Post';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
+  const accessToken = 'YOUR_ACCESS_TOKEN'; // Replace with your actual access token
 
   useEffect(() => {
     const getData = async () => {
-      const data = await fetchInstagramData();
+      const data = await fetchInstagramData(accessToken);
       setPosts(data);
     };
 
     getData();
-  }, []);
+  }, [accessToken]);
 
   return (
     <div>
