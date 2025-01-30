@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 const theme = createTheme({
   palette: {
